@@ -1,0 +1,20 @@
+{
+  "name": "kids-health-statement",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "yoad langer",
+  "license": "MIT",
+  "scrits": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "puppeteer": "^5.5.0",
+    "puppeteer-extra": "^3.1.15",
+    "puppeteer-extra-plugin-stealth": "^2.6.5",
+    "telegraf": "^3.38.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
