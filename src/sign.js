@@ -1,4 +1,6 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
+const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+
 require('dotenv').config();
 async function sign() {
   const options = {
@@ -7,8 +9,10 @@ async function sign() {
       height: 640,
       isMobile: true,
     },
-    headless: false,
+    headless: true,
   };
+  puppeteer.use(StealthPlugin());
+
   console.log('starting headless browser');
   const browser = await puppeteer.launch(options);
   const page = await browser.newPage();
@@ -16,7 +20,7 @@ async function sign() {
   // const page = await context.newPage();
 
   // set cache to false so session is not saved
-  // page.setCacheEnabled(false);
+  page.setCacheEnabled(false);
 
   // load main page
   await page.goto(process.env.URL);
